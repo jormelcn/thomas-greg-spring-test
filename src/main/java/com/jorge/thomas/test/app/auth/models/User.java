@@ -1,6 +1,7 @@
 package com.jorge.thomas.test.app.auth.models;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
@@ -9,14 +10,15 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
-import java.util.ArrayList;
 
 @Data
 @Document
 @AllArgsConstructor
 @RequiredArgsConstructor
+@NoArgsConstructor
 public class User {
   @Id
   private String id;
@@ -28,7 +30,7 @@ public class User {
   private String encodedPassword;
 
   @NonNull
-  private ArrayList<ScopedRole> roles;
+  private List<ScopedRole> roles;
 
   @CreatedDate
   private LocalDateTime createdDate;

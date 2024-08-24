@@ -4,9 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.jorge.thomas.test.app.lib.DTOMapper;
-import com.jorge.thomas.test.app.product.dtos.ProductForAdminDto;
+import com.jorge.thomas.test.app.product.dtos.ProductForAdminDTO;
 import com.jorge.thomas.test.app.product.models.Product;
-import com.jorge.thomas.test.app.product.repositories.ProductRepository;
+import com.jorge.thomas.test.app.product.repository.ProductRepository;
 
 @Service
 public class AdminCreateProduct {
@@ -17,10 +17,10 @@ public class AdminCreateProduct {
   @Autowired
   private DTOMapper mapper;
 
-  public ProductForAdminDto perform(AdminCreateProductRequest request) {
+  public ProductForAdminDTO perform(AdminCreateProductRequestDTO request) {
     Product product = new Product(request.name, request.previewImageURL, request.unitPrice);
     this.productRepository.insert(product);
-    return this.mapper.map(product, ProductForAdminDto.class);
+    return this.mapper.map(product, ProductForAdminDTO.class);
   }
 
 }

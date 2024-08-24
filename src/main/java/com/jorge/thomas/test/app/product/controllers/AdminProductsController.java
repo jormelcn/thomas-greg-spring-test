@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.jorge.thomas.test.app.product.dtos.ProductForAdminDto;
+import com.jorge.thomas.test.app.product.dtos.ProductForAdminDTO;
 import com.jorge.thomas.test.app.product.usecases.AdminCreateProduct;
-import com.jorge.thomas.test.app.product.usecases.AdminCreateProductRequest;
+import com.jorge.thomas.test.app.product.usecases.AdminCreateProductRequestDTO;
 
 import jakarta.validation.Valid;
 
@@ -23,7 +23,7 @@ public class AdminProductsController {
 
 
   @PostMapping("")
-  ProductForAdminDto create(@Valid @RequestBody AdminCreateProductRequest request) {
+  ProductForAdminDTO create(@Valid @RequestBody AdminCreateProductRequestDTO request) {
     return this.adminCreateProduct.perform(request);
   }
 
