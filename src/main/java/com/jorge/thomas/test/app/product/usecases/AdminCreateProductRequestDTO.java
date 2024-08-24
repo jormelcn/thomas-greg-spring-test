@@ -12,7 +12,7 @@ import java.net.URL;
 
 @Getter
 @Setter
-public class AdminCreateProductRequest {
+public class AdminCreateProductRequestDTO {
   @NotBlank
   @NotNull
   @Size(min = 3, max = 50)
