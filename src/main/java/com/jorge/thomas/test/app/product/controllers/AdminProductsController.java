@@ -19,10 +19,12 @@ import com.jorge.thomas.test.app.product.usecases.AdminDeleteProduct;
 import com.jorge.thomas.test.app.product.usecases.AdminReadProduct;
 import com.jorge.thomas.test.app.product.usecases.AdminUpdateProduct;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 
 @RestController
 @Validated
+@SecurityRequirement(name = "JWT")
 @RequestMapping("/admin/products")
 public class AdminProductsController {
   @Autowired

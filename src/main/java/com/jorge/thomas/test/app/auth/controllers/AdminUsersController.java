@@ -17,12 +17,16 @@ import com.jorge.thomas.test.app.auth.usecases.AdminCreateUser;
 import com.jorge.thomas.test.app.auth.usecases.AdminDeleteUser;
 import com.jorge.thomas.test.app.auth.usecases.AdminReadUser;
 import com.jorge.thomas.test.app.auth.usecases.AdminUpdateUser;
+
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+
 import com.jorge.thomas.test.app.auth.dtos.AdminUpdateUserRequestDTO;
 
 import jakarta.validation.Valid;
 
 @RestController
 @Validated
+@SecurityRequirement(name = "JWT")
 @RequestMapping("/admin/users")
 public class AdminUsersController {
   @Autowired
