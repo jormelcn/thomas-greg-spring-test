@@ -12,7 +12,7 @@ import com.jorge.thomas.test.app.product.models.Product;
 import com.jorge.thomas.test.app.product.repository.ProductRepository;
 
 @Service
-@PreAuthorize("hasAuthority('products::update')")
+@PreAuthorize("hasAnyAuthority('products::*', 'products::update')")
 public class AdminUpdateProduct {
 
   @Autowired
@@ -21,7 +21,7 @@ public class AdminUpdateProduct {
   @Autowired
   DTOMapper dtoMapper;
 
-  ProductForAdminDTO perform(AdminUpdateProductRequestDTO request) {
+  public ProductForAdminDTO perform(AdminUpdateProductRequestDTO request) {
     Product product = this.productRepository
         .findById(request.getId())
         .orElseThrow(() -> new NotFoundProduct());
