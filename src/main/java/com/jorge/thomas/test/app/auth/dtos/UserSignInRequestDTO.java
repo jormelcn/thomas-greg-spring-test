@@ -1,4 +1,4 @@
-package com.jorge.thomas.test.app.auth.usecases;
+package com.jorge.thomas.test.app.auth.dtos;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

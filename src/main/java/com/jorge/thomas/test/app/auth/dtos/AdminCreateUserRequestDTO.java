@@ -1,8 +1,6 @@
-package com.jorge.thomas.test.app.auth.usecases;
+package com.jorge.thomas.test.app.auth.dtos;
 
 import java.util.List;
-
-import com.jorge.thomas.test.app.auth.dtos.ScopedRoleDTO;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

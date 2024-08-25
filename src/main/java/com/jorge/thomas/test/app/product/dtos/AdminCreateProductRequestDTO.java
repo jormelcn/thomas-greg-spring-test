@@ -1,4 +1,4 @@
-package com.jorge.thomas.test.app.product.usecases;
+package com.jorge.thomas.test.app.product.dtos;
 
 import org.javamoney.moneta.Money;
 

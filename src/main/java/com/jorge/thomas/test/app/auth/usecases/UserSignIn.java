@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import com.jorge.thomas.test.app.auth.dtos.OwnUserDTO;
 import com.jorge.thomas.test.app.auth.dtos.SuccessSignInDTO;
 import com.jorge.thomas.test.app.auth.dtos.TokenWithExpirationDTO;
+import com.jorge.thomas.test.app.auth.dtos.UserSignInRequestDTO;
 import com.jorge.thomas.test.app.auth.models.TokenWithExpiration;
 import com.jorge.thomas.test.app.auth.models.User;
 import com.jorge.thomas.test.app.auth.repository.UserRepository;

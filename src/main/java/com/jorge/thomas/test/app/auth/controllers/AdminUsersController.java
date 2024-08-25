@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.jorge.thomas.test.app.auth.dtos.AdminCreateUserRequestDTO;
 import com.jorge.thomas.test.app.auth.dtos.UserForAdminDTO;
 import com.jorge.thomas.test.app.auth.usecases.AdminCreateUser;
-import com.jorge.thomas.test.app.auth.usecases.AdminCreateUserRequestDTO;
 
 import jakarta.validation.Valid;
 

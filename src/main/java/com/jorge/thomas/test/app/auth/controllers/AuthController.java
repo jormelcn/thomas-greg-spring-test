@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.jorge.thomas.test.app.auth.dtos.SuccessSignInDTO;
+import com.jorge.thomas.test.app.auth.dtos.UserSignInRequestDTO;
 import com.jorge.thomas.test.app.auth.usecases.UserSignIn;
-import com.jorge.thomas.test.app.auth.usecases.UserSignInRequestDTO;
 
 import jakarta.validation.Valid;
 

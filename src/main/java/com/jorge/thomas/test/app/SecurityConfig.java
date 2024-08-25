@@ -25,7 +25,7 @@ import com.jorge.thomas.test.app.auth.reqfilters.JWTRequestFilter;
 import com.jorge.thomas.test.app.auth.services.JWTService;
 
 @Configuration
-@EnableMethodSecurity
+@EnableMethodSecurity(prePostEnabled = true)
 public class SecurityConfig {
   @Bean
   UserDetailsService userDetailsService(UserDetailsService userDetailsService) {
@@ -68,7 +68,6 @@ public class SecurityConfig {
         .addFilterBefore(
             new JWTRequestFilter(
                 jwtService,
-                authenticationManager,
                 handlerExceptionResolver),
             UsernamePasswordAuthenticationFilter.class);
     return http.build();
