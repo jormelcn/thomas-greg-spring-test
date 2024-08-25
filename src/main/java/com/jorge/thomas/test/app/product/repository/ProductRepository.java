@@ -1,4 +1,4 @@
-package com.jorge.thomas.test.app.product.repositories;
+package com.jorge.thomas.test.app.product.repository;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 

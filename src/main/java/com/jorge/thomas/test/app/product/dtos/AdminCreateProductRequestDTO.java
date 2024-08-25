@@ -1,4 +1,4 @@
-package com.jorge.thomas.test.app.product.usecases;
+package com.jorge.thomas.test.app.product.dtos;
 
 import org.javamoney.moneta.Money;
 
@@ -12,7 +12,7 @@ import java.net.URL;
 
 @Getter
 @Setter
-public class AdminCreateProductRequest {
+public class AdminCreateProductRequestDTO {
   @NotBlank
   @NotNull
   @Size(min = 3, max = 50)

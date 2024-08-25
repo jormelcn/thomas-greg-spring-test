@@ -10,7 +10,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class ProductForAdminDto {
+public class ProductForAdminDTO {
   String id;
   String name;
   Money unitPrice;

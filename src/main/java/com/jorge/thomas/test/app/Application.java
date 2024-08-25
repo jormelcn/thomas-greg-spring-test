@@ -7,7 +7,6 @@ import org.zalando.jackson.datatype.money.MoneyModule;
 
 @SpringBootApplication
 public class Application {
-
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
 	}
@@ -16,6 +15,4 @@ public class Application {
 	MoneyModule moneyModule() {
 		return new MoneyModule();
 	}
-
 }
-
