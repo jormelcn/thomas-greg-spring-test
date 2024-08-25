@@ -11,7 +11,7 @@ import com.jorge.thomas.test.app.product.models.Product;
 import com.jorge.thomas.test.app.product.repository.ProductRepository;
 
 @Service
-@PreAuthorize("hasAuthority('products::create')")
+@PreAuthorize("hasAnyAuthority('products::*', 'products::create')")
 public class AdminCreateProduct {
 
   @Autowired
