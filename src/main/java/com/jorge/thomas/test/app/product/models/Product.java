@@ -13,6 +13,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
@@ -20,6 +21,7 @@ import lombok.RequiredArgsConstructor;
 @Document
 @AllArgsConstructor
 @RequiredArgsConstructor
+@NoArgsConstructor
 public class Product {
 
   @Id
