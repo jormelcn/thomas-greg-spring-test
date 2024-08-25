@@ -61,8 +61,11 @@ public class SecurityConfig {
       throws Exception {
     http
         .csrf(x -> x.disable())
-        .authorizeHttpRequests(x -> x.requestMatchers("/auth/**")
-            .permitAll().anyRequest().authenticated())
+        .authorizeHttpRequests(x -> x
+            .requestMatchers("/auth/**").permitAll()
+            .requestMatchers("/swagger-ui/**").permitAll()
+            .requestMatchers("v3/api-docs/**").permitAll()
+            .anyRequest().authenticated())
         .sessionManagement(x -> x.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
         .authenticationProvider(authenticationProvider)
         .addFilterBefore(
