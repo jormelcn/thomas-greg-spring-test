@@ -27,6 +27,6 @@ public class AdminCreateUserRequestDTO {
   List<ScopedRoleDTO> roles;
 
   void setEmail(String email){
-    this.email = email.toLowerCase();
+    this.email = email.strip().toLowerCase();
   }
 }

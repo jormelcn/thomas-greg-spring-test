@@ -3,7 +3,6 @@ package com.jorge.thomas.test.app;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.convert.converter.Converter;
@@ -18,15 +17,9 @@ import com.mongodb.client.MongoClients;
 @Configuration
 @EnableMongoAuditing
 public class MongoConfig {
-
-  @Autowired
-  MoneyWriteConverter moneyWriteConverter;
-
-  @Autowired
-  URLWriteConverter urlWriteConverter;
-
   @Bean
-  MongoCustomConversions customConversions() {
+  MongoCustomConversions customConversions(MoneyWriteConverter moneyWriteConverter,
+      URLWriteConverter urlWriteConverter) {
     List<Converter<?, ?>> converters = new ArrayList<>();
     converters.add(urlWriteConverter);
     converters.add(moneyWriteConverter);
