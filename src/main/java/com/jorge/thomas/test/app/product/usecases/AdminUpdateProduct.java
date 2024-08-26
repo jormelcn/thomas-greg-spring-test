@@ -1,5 +1,6 @@
 package com.jorge.thomas.test.app.product.usecases;
 
+import org.javamoney.moneta.Money;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
@@ -30,7 +31,7 @@ public class AdminUpdateProduct {
       product.setName(request.getName());
 
     if (request.getUnitPrice() != null)
-      product.setUnitPrice(request.getUnitPrice());
+      product.setUnitPrice(this.dtoMapper.map(request.getUnitPrice(), Money.class));
 
     if (request.getPreviewImageURL() != null)
       product.setPreviewImageURL(request.getPreviewImageURL());

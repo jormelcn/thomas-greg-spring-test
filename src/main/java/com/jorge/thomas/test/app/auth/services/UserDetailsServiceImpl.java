@@ -1,5 +1,6 @@
 package com.jorge.thomas.test.app.auth.services;
 
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -21,9 +22,12 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
   @Override
   public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-    User user = this.userRepository.findFirstByUsername(username)
-        .orElseThrow(() -> new UsernameNotFoundException("Not found "));
+    Optional<User> optionalUser = this.userRepository.findFirstByUsername(username);
+    if(!optionalUser.isPresent()){
+      new UsernameNotFoundException("Not found username");
+    }
 
+    User user = optionalUser.get();
     Set<GrantedAuthority> authorities = user
         .getRoles()
         .stream()

@@ -1,5 +1,6 @@
 package com.jorge.thomas.test.app.product.usecases;
 
+import org.javamoney.moneta.Money;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
@@ -21,7 +22,10 @@ public class AdminCreateProduct {
   private DTOMapper mapper;
 
   public ProductForAdminDTO perform(AdminCreateProductRequestDTO request) {
-    Product product = new Product(request.getName(), request.getPreviewImageURL(), request.getUnitPrice());
+    Product product = new Product(
+        request.getName(),
+        request.getPreviewImageURL(),
+        this.mapper.map(request.getUnitPrice(), Money.class));
     this.productRepository.insert(product);
     return this.mapper.map(product, ProductForAdminDTO.class);
   }
