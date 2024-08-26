@@ -1,7 +1,6 @@
 package com.jorge.thomas.test.app.money;
 
-import java.util.HashMap;
-
+import org.bson.Document;
 import org.javamoney.moneta.Money;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.data.convert.WritingConverter;
@@ -11,15 +10,15 @@ import org.springframework.stereotype.Component;
 
 @Component
 @WritingConverter
-public class MoneyWriteConverter implements Converter<Money, HashMap<String, Object>> {
+public class MoneyWriteConverter implements Converter<Money, Document> {
 
   @Override
   @Nullable
-  public HashMap<String, Object> convert(@NonNull Money source) {
-    HashMap<String, Object> map = new HashMap<>();
-    map.put("amount", source.getNumber().toString());
-    map.put("currency", source.getCurrency().getCurrencyCode());
-    return map;
+  public Document convert(@NonNull Money source) {
+    Document document = new Document();
+    document.put("amount", source.getNumber().toString());
+    document.put("currency", source.getCurrency().getCurrencyCode());
+    document.put("aprox", source.getNumber().doubleValue());
+    return document;
   }
-
 }
