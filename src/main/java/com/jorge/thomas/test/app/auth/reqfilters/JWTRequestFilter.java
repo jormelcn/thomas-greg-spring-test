@@ -52,10 +52,10 @@ public class JWTRequestFilter extends OncePerRequestFilter {
           userDetails.getAuthorities());
       authToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
       SecurityContextHolder.getContext().setAuthentication(authToken);
-      filterChain.doFilter(request, response);
-    } catch (Exception exception) {
-      handlerExceptionResolver.resolveException(request, response, null, exception);
-      filterChain.doFilter(request, response);
+
+    } catch (Exception e) {
+      handlerExceptionResolver.resolveException(request, response, null, e);
     }
+    filterChain.doFilter(request, response);
   }
 }
