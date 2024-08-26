@@ -28,7 +28,7 @@ import jakarta.validation.Valid;
 
 @RestController
 @Validated
-@CrossOrigin()
+@CrossOrigin(allowedHeaders = "*")
 @SecurityRequirement(name = "JWT")
 @RequestMapping("/admin/products")
 public class AdminProductsController {
@@ -47,6 +47,7 @@ public class AdminProductsController {
   @Autowired
   AdminDeleteProduct adminDeleteProduct;
 
+  @CrossOrigin(origins = "*")
   @GetMapping("")
   PageDTO<ProductForAdminDTO> search(@Valid AdminSearchProductsRequestDTO request) {
     return this.adminSearchProducts.perform(request);

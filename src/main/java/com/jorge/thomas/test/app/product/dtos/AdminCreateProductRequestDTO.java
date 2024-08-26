@@ -1,6 +1,6 @@
 package com.jorge.thomas.test.app.product.dtos;
 
-import org.javamoney.moneta.Money;
+import com.jorge.thomas.test.app.money.MoneyDTO;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -19,7 +19,7 @@ public class AdminCreateProductRequestDTO {
   String name;
 
   @NotNull
-  Money unitPrice;
+  MoneyDTO unitPrice;
 
   @NotNull
   URL previewImageURL;

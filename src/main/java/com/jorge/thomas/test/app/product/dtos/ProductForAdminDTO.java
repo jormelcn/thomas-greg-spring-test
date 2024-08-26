@@ -1,9 +1,8 @@
 package com.jorge.thomas.test.app.product.dtos;
 
-import java.net.URL;
 import java.time.LocalDateTime;
 
-import org.javamoney.moneta.Money;
+import com.jorge.thomas.test.app.money.MoneyDTO;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -13,8 +12,8 @@ import lombok.Setter;
 public class ProductForAdminDTO {
   String id;
   String name;
-  Money unitPrice;
-  URL previewImageURL;
+  MoneyDTO unitPrice;
+  String previewImageURL;
   LocalDateTime createdDate;
   LocalDateTime lastModifiedDate;
 }

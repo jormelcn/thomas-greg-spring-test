@@ -10,6 +10,9 @@ import org.modelmapper.convention.NamingConventions;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Component;
 
+import com.jorge.thomas.test.app.money.DTOToMoneyConverter;
+import com.jorge.thomas.test.app.money.MoneyToDTOConverter;
+
 import jakarta.annotation.PostConstruct;
 
 @Component
@@ -21,6 +24,9 @@ public class DTOMapper extends ModelMapper {
         .setFieldMatchingEnabled(true)
         .setFieldAccessLevel(AccessLevel.PRIVATE)
         .setSourceNamingConvention(NamingConventions.JAVABEANS_MUTATOR);
+
+    this.addConverter(new MoneyToDTOConverter());
+    this.addConverter(new DTOToMoneyConverter());
   }
 
   public <S, T> List<T> mapList(Collection<S> source, Class<T> targetClass) {
